@@ -1,5 +1,6 @@
 #!/bin/bash
 version=0.1
+echo mountpi version:$version
 
 # check for required privileges
 if [ "$EUID" -ne 0 ]
