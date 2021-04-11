@@ -2,9 +2,10 @@
 Automated way to mount/umount a raspberry pi image under linux.
 
 ## Installation
-Simply copy the repository to your computer
+Simply copy the repository to your computer and make the script executable
 ```bash
 git clone https://github.com/novamostra/mountpi
+sudo chmod +x mountpi/mountpi.sh
 ```
 
 ## Usage Instructions
