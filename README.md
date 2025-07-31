@@ -10,7 +10,7 @@ sudo chmod +x mountpi/mountpi.sh
 
 ## Usage Instructions
 ```bash
-sudo ./mountpi/mountpi.sh -i image_file.img -m existing_mount_directory
+sudo ./mountpi/mountpi.sh -i image_file.img -m existing_mount_directory -n image_index
 ```
 
 ![mountpi.sh usage](images/mountpi.png?raw=true "mountpi.sh usage")
