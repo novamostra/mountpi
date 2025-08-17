@@ -19,7 +19,6 @@ sudo chmod +x mountpi/mountpi.sh
 * **Fixed** - Unmounting no longer requires the image name, only the mount directory.
 * **Fixed** - Flags and parameters handling optimization
 
-
 ## Usage Instructions
 
 1) Clone the Git Repository
@@ -68,4 +67,8 @@ sudo ./mountpi -i path/to/raspberry.img -m path/to/mnt/directory -p 2
 
 This will mount the second ext4 partition of the image. If `-p` parameter is omitted then it defaults to 1, so the first ext4 partition will be mounted.
 
-Read how it works at [novamostra.com](https://novamostra.com/2021/04/11/mountpi) and [here about v0.2](https://novamostra.com/2025/08/17/mountpi-0-2-released/)
+## Read more
+Read more about how it works at [novamostra.com](https://novamostra.com/2021/04/11/mountpi) and [here about v0.2](https://novamostra.com/2025/08/17/mountpi-0-2-released/)
+
+## Contributions
+Special thanks to [@pevsonic](https://github.com/pevsonic) and [RobertLauferElektrobit](https://github.com/RobertLauferElektrobit) for their valuable contributions to the code.
