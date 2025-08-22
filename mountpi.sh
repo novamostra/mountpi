@@ -1,5 +1,5 @@
 #!/bin/bash
-version=0.2
+version=0.2.1
 echo mountpi version:$version
 
 # check for required privileges
@@ -62,6 +62,7 @@ while [ "$1" != "" ]; do
       print_usage
       ;;
      * )
+       echo -e '\nERROR: Unrecognized arguments.\n'
        print_usage
    esac
    shift
@@ -104,7 +105,7 @@ mount_partition() {
 }
 
 if [ -z $MOUNT_DIR ]; then
-  echo 'ERROR: Missing Required Argument - Mount Directory (-m)!'
+  echo -e '\nERROR: Missing Required Argument: Mount Directory (-m)!\n'
   print_usage
   exit 0
 fi
@@ -126,7 +127,7 @@ fi
 
 # check that both the image file is provided
 if [ -z $IMG ]; then
-  echo 'ERROR: Missing Required Argument - Image File (-i)!'
+  echo -e '\nERROR: Missing Required Argument: Image File (-i)!\n'
   print_usage
   exit 0
 fi
@@ -138,7 +139,7 @@ fi
 
 
 if [ "$BOOT_PARTITION" = true ] && [ $PARTITION_INDEX -gt 1 ]; then
-  echo 'ERROR: Boot Flag (-b) and Partition Index (-p) are mutually exclusive.'
+  echo -e '\nERROR: Boot Flag (-b) and Partition Index (-p) are mutually exclusive.\n'
   print_usage
   exit 0
 fi
@@ -146,7 +147,7 @@ fi
 available_ext_partitions=$(fdisk -l $IMG | grep "Linux$" | wc -l)
 
 if [ $PARTITION_INDEX -gt $available_ext_partitions ]; then
-  echo "ERROR: Only $available_ext_partitions partition(s) available. Requested partition does not exist."
+  echo -e "\nERROR: Only $available_ext_partitions partition(s) available. Requested partition does not exist.\n"
   exit 0
 fi
 
